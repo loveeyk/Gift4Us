@@ -91,6 +91,7 @@ p {
   padding: 1rem;
   color: inherit;
   transition: 0.1s ease-in;
+  cursor: pointer;
 }
 /* Platzhalter für Bild (erstes Element) */
 /* .categories li:first-child {
