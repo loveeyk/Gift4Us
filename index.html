@@ -13,8 +13,8 @@
   </head>
   <!-- wird angezeigt -->
   <body>
-    <div class="overlay">
-      <form action="GET">
+    <div class="overlay" id="overlay">
+      <form action="GET" id="login_form">
         <label>Username or Email</label>
         <input type="text" id="username" name="username" > 
 
@@ -39,7 +39,7 @@
           </a></li>
      
 
-          <li>Login</li>
+          <li id="login">Login</li>
         </a>
        
       </ul>
@@ -98,6 +98,26 @@
     }
     })
 
+    let overlay = document.getElementById('overlay');
+    let button_login = document.getElementById('login');
+    let login_form = document.getElementById('login_form');
+
+    button_login.addEventListener('click', function(){
+      overlay.style.display='flex'
+    })
+
+    /** Wenn man außerhalb der Form drückt schließt sich Overlay, wenn innerhalb dann nicht.*/
+    overlay.addEventListener('click', function(e){
+      if(!login_form.contains(e.target)){ 
+       overlay.style.display = 'none'
+      }
+    })
+
+    document.body.addEventListener('keydown', function(e){
+      if(e.keyCode === 27){
+        overlay.style.display = 'none'
+      }
+    })
 
     
   </script>
