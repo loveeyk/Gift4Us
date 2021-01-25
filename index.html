@@ -14,16 +14,22 @@
   <!-- wird angezeigt -->
   <body>
     <div class="overlay" id="overlay">
-      <form action="GET" id="login_form">
-        <label>Username or Email</label>
-        <input type="text" id="username" name="username" > 
+      <form action="" method="POST" id="login_form">
+        <img id="login_logo" src="present.svg"/>
+        
+        <label><i class="fa fa-user"></i> Username or Email</label>
+        <input type="text" id="username" name="username" required> 
 
-        <label>Password</label>
-        <input type="password" id="password" name="password"><br>
+        <label><i class="fa fa-key"></i> Password</label>
+        <input type="password" id="password" name="password" required><br>
+        
         
         <input type="submit" id="submit" name="submit" value="Login"/>
+        <a href="http://127.0.0.1:5500/index.html">Forgot Password?</a>
+        <a href="http://127.0.0.1:5500/index.html">Sign Up</a>
 
       </form>
+
     </div>
 
     <!-- Unsored List (Nicht nummerierte Liste)-->
