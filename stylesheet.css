@@ -109,6 +109,18 @@ p {
 #container-darken {
   background: linear-gradient(0, #00000000, transparent);
 }
+.showcase {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: rgb(29 58 95);
+  font-size: 10rem;
+  padding: 1rem;
+}
+.showcase i {
+  outline: 1px solid red;
+  width: 200px;
+}
 
 .container {
   text-align: center;
@@ -127,7 +139,7 @@ p {
   font-size: 4vw; /*vw = VIEWPORT WIDTH */
   font-weight: 200;
   /* text-shadow: 2px 3px 9px #1f1f1f; */
-  color:rgb(41 93 160)
+  color: rgb(29 58 95)
 }
 /* NAVBAR */
 /* ############################## */
