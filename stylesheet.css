@@ -3,8 +3,8 @@
 /* ALLGEMEIN */
 /* ############################## */
 body {
-  background: linear-gradient(rgb(0 0 0 / 28%), rgb(0 0 0 / 75%)),
-    url(background.jpg);
+ /** background: linear-gradient(rgb(0 0 0 / 28%), rgb(0 0 0 / 75%)),
+    url(background.jpg); **/
   background-position: center center;
   color: antiquewhite;
   font-family: "system-ui", Helvetica, Arial, sans-serif;
@@ -12,6 +12,7 @@ body {
   line-height: 1.5;
   margin: 0;
   overflow-x: hidden;
+  background: #2a5da0;
 }
 
 .overlay {
@@ -105,18 +106,28 @@ p {
 
 /* CONTAINER */
 /* ############################## */
+#container-darken {
+  background: linear-gradient(0, #00000000, transparent);
+}
+
 .container {
   text-align: center;
-  padding-top: 10rem;
+  position: relative;
 }
+
 .container h1 {
   color: rgb(212 176 0);
   text-shadow: 1px 1px 4px black;
 }
+.container-image {
+  height: 50%;
+  object-fit: scale-down;
+}
 .beautify {
   font-size: 4vw; /*vw = VIEWPORT WIDTH */
   font-weight: 200;
-  text-shadow: 2px 3px 9px #1f1f1f;
+  /* text-shadow: 2px 3px 9px #1f1f1f; */
+  color:rgb(41 93 160)
 }
 /* NAVBAR */
 /* ############################## */
@@ -124,6 +135,13 @@ p {
   position: sticky;
   top: 0;
 }
+.navbar::before {
+  content: "";
+  height: 14vw;
+  display:block;  
+}
+
+
 .categories {
   text-align: center;
   padding: 0;
@@ -298,3 +316,8 @@ p {
   color: antiquewhite;
   border-color: antiquewhite;
 }
+
+.bg-white{
+  background:white!important;
+}
+

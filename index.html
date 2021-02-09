@@ -1,3 +1,5 @@
+<!--TODO: Background change at scroll !-->
+
 <html>
   <!-- Beinhaltet Informationen über die Seite
 / wird aber nicht angezeigt -->
@@ -51,8 +53,11 @@
       </ul>
     </div>
 
-    <div class="container">
+    <div class="container" id="container-darken">
+      <img class="container-image" src="gift-2918986_1280.png" />
      <!--  <h1>Gift Suggestions</h1> -->
+    </div>
+    <div id="parallax-container" class="container bg-white">
       <p class="beautify">
         Finding the perfect present isn't easy. We will help.
        <!--  Welcome to our Homepage Gift4Us. 
@@ -62,21 +67,6 @@
         We give you the best ideas and gift suggestions.
         Just with one click on the Button below you will get some suggestions. -->
       </p>
-          
-    </div>
-
-    <!-- Inputfeld (Kästchen, Suchfeld, ...)-->
-    <div class="container">
-      <input
-        type="text"
-        placeholder="What are you looking for?"
-        maxlength="30"
-        id="search"
-        name="search"
-      />
-      <button type="button" id="searchbutton" name="searchbutton">Go</button>
-    </div>
-
     <div class="container">
       <ul id="suggestions">
         <li>Family</li>
@@ -85,23 +75,54 @@
         <li>Friends</li>
       </ul>
     </div>
+    <div class="container">
+      <ul id="suggestions">
+        <li>Family</li>
+        <li>For Him</li>
+        <li>For Her</li>
+        <li>Friends</li>
+      </ul>
+    </div>
+    <div class="container">
+      <ul id="suggestions">
+        <li>Family</li>
+        <li>For Him</li>
+        <li>For Her</li>
+        <li>Friends</li>
+      </ul>
+    </div>
+    </div>
+
+
 
 
 
   <script>
     let categories = document.getElementById('categories');
     let logo = document.getElementById('logo');
+    
+    /** for  PARALLAX effect with shadow**/
+    let parallax_container = document.getElementById('parallax-container')
+    let scrolltop = 0
+    let container_darken = document.getElementById('container-darken');
 
     addEventListener('scroll', function(){
       if(document.body.scrollTop > 80){ 
         categories.className = "categories scrolled"
         logo.setAttribute('height', '30px')
         logo.setAttribute('width','30px')
+        scrolltop = 80
     }else{
+      scrolltop = Math.abs(document.body.scrollTop - scrolltop) > 2 ? document.body.scrollTop : scrolltop
+      parallax_container.style.marginTop = `-${scrolltop}`
+      container_darken.style.background = `linear-gradient(rgb(0 0 0 ${document.body.scrollTop}))`;
+      console.log(document.body.scrollTop)
       categories.className = "categories"
       logo.setAttribute('height', '80px')
       logo.setAttribute('width','80px')
     }
+
+
     })
 
     let overlay = document.getElementById('overlay');
