@@ -8,62 +8,65 @@
     <!-- ICONS //FONT AWESOME 4 -->
     <script src="https://use.fontawesome.com/e7ec556f3d.js"></script>
 
-  
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
   </head>
   <!-- wird angezeigt -->
   <body>
     <div class="overlay" id="overlay">
       <form action="" method="POST" id="login_form">
-        <img id="login_logo" src="present.svg"/>
-        
+        <img id="login_logo" src="present2.svg" />
+
         <label><i class="fa fa-user"></i> Username or Email</label>
-        <input type="text" id="username" name="username" required> 
+        <input type="text" id="username" name="username" required />
 
         <label><i class="fa fa-key"></i> Password</label>
-        <input type="password" id="password" name="password" required><br>
-        
-        
-        <input type="submit" id="submit" name="submit" value="Login"/>
+        <input type="password" id="password" name="password" required /><br />
+
+        <input type="submit" id="submit" name="submit" value="Login" />
         <a href="http://127.0.0.1:5500/index.html">Forgot Password?</a>
         <a href="http://127.0.0.1:5500/index.html">Sign Up</a>
-
       </form>
-
     </div>
 
-    <!-- Unsored List (Nicht nummerierte Liste)-->
-    <div class="navbar" id="navbar">
-      <ul class="categories" id="categories">
-       
-          <li><a href=""><img id="logo" src="present.svg" height="80px" width="80px" /></a></li>
-          <li>Home</li>
-          <li>Geschenkvorschläge</li>
-          <li>About us</li>
-          <li><a href="mailto:l.karir@test.at"><i class="fa fa-envelope" aria-hidden="true"></i>
-          </a></li>
-     
-
-          <li id="login">Login</li>
-        </a>
-       
-      </ul>
+    <!--copied from  w3schools/collapsible navbar-->
+    <div class="topnav" id="myTopnav">
+      <img src="present2.svg" class="nav_logo" />
+      <a href="#home" class="active">Home</a>
+      <a href="#about_us">About Us</a>
+      <a href="#contact">Contact</a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Geschenkvorschläge
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">For Valentine's Day</a>
+          <a href="#">For Wedding</a>
+          <a href="#">For Birthday</a>
+          <a href="#">More</a>
+        </div>
+      </div>
+      <a href="#about">About</a>
+      <!--  <a href="javascript:void(0);" class="icon" onclick="myFunction()"
+        >&#9776;</a
+      > -->
     </div>
-
-
 
     <div class="container">
-     <!--  <h1>Gift Suggestions</h1> -->
+      <!--  <h1>Gift Suggestions</h1> -->
       <p class="beautify">
         Finding the perfect present isn't easy. We will help.
-       <!--  Welcome to our Homepage Gift4Us. 
+        <!--  Welcome to our Homepage Gift4Us. 
         As you all know finding the perfect gift is not always that simple.
         Our Website makes it easier to find your perfect gift for special
         people. No matter, if it's for Christmas, Birthday or Wedding. 
         We give you the best ideas and gift suggestions.
         Just with one click on the Button below you will get some suggestions. -->
       </p>
-          
     </div>
 
     <!-- Inputfeld (Kästchen, Suchfeld, ...)-->
@@ -81,52 +84,12 @@
     <div class="container">
       <ul id="suggestions">
         <li>Family</li>
-        <li>For Him</li>
+        <li id="blub">For Him</li>
         <li>For Her</li>
         <li>Friends</li>
       </ul>
     </div>
 
-
-
-  <script>
-    let categories = document.getElementById('categories');
-    let logo = document.getElementById('logo');
-
-    addEventListener('scroll', function(){
-      if(document.body.scrollTop > 80){ 
-        categories.className = "categories scrolled"
-        logo.setAttribute('height', '30px')
-        logo.setAttribute('width','30px')
-    }else{
-      categories.className = "categories"
-      logo.setAttribute('height', '80px')
-      logo.setAttribute('width','80px')
-    }
-    })
-
-    let overlay = document.getElementById('overlay');
-    let button_login = document.getElementById('login');
-    let login_form = document.getElementById('login_form');
-
-    button_login.addEventListener('click', function(){
-      overlay.style.display='flex'
-    })
-
-    /** Wenn man außerhalb der Form drückt schließt sich Overlay, wenn innerhalb dann nicht.*/
-    overlay.addEventListener('click', function(e){
-      if(!login_form.contains(e.target)){ 
-       overlay.style.display = 'none'
-      }
-    })
-
-    document.body.addEventListener('keydown', function(e){
-      if(e.keyCode === 27){
-        overlay.style.display = 'none'
-      }
-    })
-
-    
-  </script>
+    <script src="index.js"></script>
   </body>
 </html>
